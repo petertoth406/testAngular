@@ -1,1 +1,6 @@
-<p>child works!</p>
+<div class="border">
+    <p>Itt meg fog jelenni egy szöveg: {{text}}</p>
+    <label for="">Child komponens</label>
+    <input type="text" [(ngModel)]="sendBackValue">
+    <button (click)="sendBack()">Send</button>
+</div>

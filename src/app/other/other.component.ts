@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-other',
+  selector: 'other',
   standalone: false,
   
   templateUrl: './other.component.html',
   styleUrl: './other.component.css'
 })
 export class OtherComponent {
+  @Input() text = '';
 
+  sendBack(){
+    
+  }
 }
