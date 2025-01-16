@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { MyService } from './my.service';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +8,12 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'my';
-  inputValue = 'asd';
-  fromChild = '';
 
-  a!: number;
-  b!: number;
-  result!: number;
+  constructor(private myService: MyService){
 
-  getValue(value: string){
-    this.fromChild = value;
   }
-  sum(){
-    this.result = +(this.a ?? 0) + +(this.b ?? 0) as number;
+
+  isLoggedIn(){
+    return this.myService.isLoggedIn();
   }
 }

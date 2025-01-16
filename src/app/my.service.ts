@@ -5,5 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class MyService {
 
+  private _isLoggedIn: boolean = false;
+
   constructor() { }
+
+  isLoggedIn(){
+    return this._isLoggedIn;
+  }
+  login(){
+    this._isLoggedIn = true;
+  }
+  logout(){
+    this._isLoggedIn = false;
+  }
 }
