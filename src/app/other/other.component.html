@@ -1,6 +1,7 @@
 <div class="border">
-    <p>Itt meg fog jelenni egy szöveg: {{text}}</p>
-    <label for="">Ohter komponens</label>
-    <input type="text">
-    <button (click)="sendBack()">Send</button>
+    <p class="red">other works!</p>
+    <child [name]="myName" (sendBackEvent)="getValue($event)"></child>
+    <p [class]="color">Én pedig ezt kaptam a child-tól: {{fromChild}}</p>
+    <button (click)="changeColor()">Change Color</button>
 </div>
+

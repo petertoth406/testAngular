@@ -1,16 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'other',
+  selector: 'app-other',
   standalone: false,
   
   templateUrl: './other.component.html',
   styleUrl: './other.component.css'
 })
 export class OtherComponent {
-  @Input() text = '';
+  myName: string = "Béla";
+  fromChild!: string;
+  color: string = "red";
 
-  sendBack(){
-    
+  getValue(text: string){
+    this.fromChild = text;
+  }
+
+  changeColor(){
+    if(this.color == "red"){
+      this.color = "blue";
+    }else{
+      this.color = "red";
+    }
   }
 }

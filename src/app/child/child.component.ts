@@ -1,19 +1,29 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-child',
+  selector: 'child',
   standalone: false,
   
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })
 export class ChildComponent {
-  @Input() text = '';
-  sendBackValue = '';
-  
+
+  @Input() fromApp: string = "htnonhoienhpoi";
+  @Input() name!: string;
+
   @Output() sendBackEvent = new EventEmitter<string>();
   
+  toApp!: string;
+
   sendBack(){
-    this.sendBackEvent.emit(this.sendBackValue)
+    this.sendBackEvent.emit(this.toApp)
   }
+
+
+  constructor(){
+    //this.fromApp = 5;
+    //this.fromApp = {name : "Peti"}
+  }
+
 }

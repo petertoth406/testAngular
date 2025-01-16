@@ -1,6 +1,10 @@
 <div class="border">
-    <p>Itt meg fog jelenni egy szöveg: {{text}}</p>
-    <label for="">Child komponens</label>
-    <input type="text" [(ngModel)]="sendBackValue">
-    <button (click)="sendBack()">Send</button>
+    <p class="red" style="color: green">Ez itt az app komponensről jött: {{fromApp}}</p>
+    <p>Szia {{name}} !</p>
+
+    <label for="">Ez fog visszamenni az App-ra</label>
+    <input type="text" [(ngModel)]="toApp" (change)="sendBack()">
+    <button (click)="sendBack()">Send back</button>
 </div>
+
+
