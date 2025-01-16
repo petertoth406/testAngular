@@ -1,21 +1,2 @@
-<div class="border">
-    <h1>Ez itt a parent</h1>
-    <input type="text" [(ngModel)]="inputValue">
-    <p>Itt megjelenik az, ami az inputban {{inputValue}}</p>
-    <app-child [text]="inputValue" (sendBackEvent)="getValue($event)"></app-child>
-    <p>Ez meg itt a childról jött vissza: {{fromChild}}</p>
-
-    <label for="">Szám A:</label>
-    <input type="text" [(ngModel)]="a" (change)="sum()">
-    <label for="">Szám B:</label>
-    <input type="text" [(ngModel)]="b" (change)="sum()">
-    <label for="">Eredmény:</label>
-    <input type="text" [ngModel]="result">
-    <p>Result változó értéke: {{result}}</p>
-    <p>Ha az A vagy B szám változik, akkor változik a result. De ha a result inputja változik, akkor az a változóban nem érvényesül</p>
-
-
-    <other [text]="inputValue"></other>
-</div>
-
-
+<navbar *ngIf="myService.isLogged()"></navbar>
+<router-outlet></router-outlet>

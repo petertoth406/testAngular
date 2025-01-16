@@ -4,6 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MyService {
-
+  private isLoggedIn = false;
   constructor() { }
+
+  isLogged() {
+    return this.isLoggedIn;
+  }
+  login() {
+    this.isLoggedIn = true;
+  }
+  logout() {
+    this.isLoggedIn = false;
+  }
 }
