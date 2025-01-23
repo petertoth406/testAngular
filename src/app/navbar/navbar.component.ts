@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyService } from '../services/my.service';
+
 
 @Component({
   selector: 'navbar',
@@ -10,17 +11,16 @@ import { MyService } from '../services/my.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  constructor(private router: Router,
+    private myService: MyService) {}
 
-    constructor(private router: Router, private myService: MyService){ }
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 
-    navigateTo(path: string){
-        this.router.navigate([path]);
-    }
-
-    logout(){
-        console.log("ide jön majd a kijelentkezés logikája");
-        this.myService.logout();
-        this.router.navigate(['login']);
-    }
-    
+  logout() {
+    console.log('Logged out');
+    this.navigateTo('login');
+    this.myService.logout();
+  }
 }

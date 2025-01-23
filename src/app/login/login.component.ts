@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MyService } from '../services/my.service';
 import { Router } from '@angular/router';
+import { MyService } from '../services/my.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,12 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   constructor(private myService: MyService,
-    private router: Router
-    ){}
+              private router: Router
+  ) {}
 
-  login(){
+  login() {
     this.myService.login();
+    console.log('Logged in');
     this.router.navigate(['home']);
   }
 }
