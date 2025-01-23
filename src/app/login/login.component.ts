@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, SimpleChanges } from '@angular/core';
 import { MyService } from '../my.service';
 import { Router } from '@angular/router';
 
@@ -9,15 +9,19 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-    constructor(private myService: MyService,
+export class LoginComponent implements OnDestroy {
+
+  constructor(private myService: MyService,
               private router: Router
-      ){
+  ) {}
 
-    }
+  login() {
+    this.myService.login();
+    console.log('Logged in');
+    this.router.navigate(['home']);
+  }
 
-    login(){
-      this.myService.login()
-      this.router.navigate(["home"])
-    }
+  ngOnDestroy(): void {
+    alert("Bezárás")
+  }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class MyService {
 
-  private _isLoggedIn: boolean = false;
+  private _isLoggedIn: boolean = true;
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   isLoggedIn(){
     return this._isLoggedIn;
@@ -17,5 +20,9 @@ export class MyService {
   }
   logout(){
     this._isLoggedIn = false;
+  }
+
+  myFirstGet(){
+    return this.http.get<any>("https://jsonplaceholder.typicode.com/users")
   }
 }
