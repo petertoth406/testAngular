@@ -11,6 +11,7 @@ import { ElsoOraComponent } from './elso-ora/elso-ora.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TablazatComponent } from './tablazat/tablazat.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TablazatComponent } from './tablazat/tablazat.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

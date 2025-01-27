@@ -2,3 +2,15 @@
 <h1>Ez itt a home komponens</h1>
 <p>Üdvözöllek az oldalamon, Jóska Pista vagyok, stb</p>
 
+<table>
+    <tr>
+        <th>Név</th>
+        <th>Email</th>
+        <th>Telefon</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+    </tr>
+</table>
