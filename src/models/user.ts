@@ -3,27 +3,27 @@ export interface User{
     name: string,
     username: string,
     email: string,
-    address: any, //todo: Address interface
+    address: Address
     phone: string,
     website: string,
-    company: any //todo: Company interface  
+    company?: Company
+    showAddress?: boolean
 }
 
 export interface Address{
     street: string,
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
+    suite: string,
+    city: string,
+    zipcode: string,
+    geo?: {
+      lat: number,
+      lng: number
     }
 }
 
 export interface Company{
-    
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
+    name: string,
+    catchPhrase: string,
+    bs: string
       
 }

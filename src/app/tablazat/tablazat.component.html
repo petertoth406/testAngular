@@ -1,13 +1,16 @@
 <table>
-    <tr>
-        <th>Id</th>
-        <th>Név</th>
-        <th>Leírás</th>
-        <th>Ár</th>
-        <th>Elérhető?</th>
-        <th>Esemény</th>
-        <th>Kép</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Név</th>
+            <th>Leírás</th>
+            <th>Ár</th>
+            <th>Elérhető?</th>
+            <th>Esemény</th>
+            <th>Kép</th>
+        </tr>
+    </thead>
+    
     <tbody>
         <tr  *ngFor="let product of products; index as akarmi; count as c; even as e" [ngClass]="e ? 'ezt':'azt'" [ngSwitch]="product.category">
             <td>{{akarmi + 1}}. / {{c}}</td>

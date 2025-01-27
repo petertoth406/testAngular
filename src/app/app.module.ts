@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TablazatComponent } from './tablazat/tablazat.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ElsoOraComponent,
     HomeComponent,
     NavbarComponent,
-    TablazatComponent
+    TablazatComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
