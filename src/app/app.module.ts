@@ -13,6 +13,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TablazatComponent } from './tablazat/tablazat.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './address/address.component';
+import { UserComponent } from './user/user.component';
+import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './post/post.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { AddressComponent } from './address/address.component';
     HomeComponent,
     NavbarComponent,
     TablazatComponent,
-    AddressComponent
+    AddressComponent,
+    UserComponent,
+    UsersComponent,
+    PostsComponent,
+    PostComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
