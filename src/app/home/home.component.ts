@@ -17,10 +17,14 @@ export class HomeComponent implements OnInit{
     name: "Teszt",
     username: "testuser",
     email: "testuser@asd.hu",
-    address: {}, 
+    address: {
+      street: "Kossuth Lajos utca 12",
+      suite: "2",
+      city: "Budapest",
+      zipcode: "1234"
+    }, 
     phone: "+36701234567",
-    website: "www.asd.com",
-    company: {} 
+    website: "www.asd.com"
   }];
   
 
