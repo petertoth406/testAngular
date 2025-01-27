@@ -2,33 +2,3 @@
 <h1>Ez itt a home komponens</h1>
 <p>Üdvözöllek az oldalamon, Jóska Pista vagyok, stb</p>
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Név</th>
-        <th>Leírás</th>
-        <th>Ár</th>
-        <th>Elérhető?</th>
-        <th>Esemény</th>
-        <th>Kép</th>
-    </tr>
-    <tbody>
-        <tr  *ngFor="let product of products; index as akarmi; count as c; even as e" [ngClass]="e ? 'ezt':'azt'" [ngSwitch]="product.category">
-            <td>{{akarmi + 1}}. / {{c}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.description | titlecase}}</td>
-            <td>{{product.price | currency: 'HUF'}}</td>
-            <td>{{product.isAvailable}}</td>
-            <td ><button (click)="myFunc(product)" *ngIf="e">Valami esemény a soron</button></td>
-            <td>
-                <div *ngSwitchCase="'electronics'">
-                    Ez itt elektronikai cumó
-                </div>
-                <div *ngSwitchCase="'fruits'">
-                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRwk6PZxzYCEUPwRVCEfz0aecdJ_7heWeHv7IAJlpgyIwPSjFjJkKfoamnkth79f_m5TPW0KzJvIlwPPGCF8VY24w" alt="">
-                </div>
-            </td>
-        </tr>
-    </tbody>
-    
-</table>

@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
-import { MyService } from './services/my.service';
+import { MyService } from '../services/my.service';
 
 @Component({
   selector: 'app-root',

@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ElsoOraComponent } from './elso-ora/elso-ora.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TablazatComponent } from './tablazat/tablazat.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ElsoOraComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    TablazatComponent
   ],
   imports: [
     BrowserModule,
