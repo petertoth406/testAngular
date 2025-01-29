@@ -1,5 +1,5 @@
 import { Component, OnDestroy, SimpleChanges } from '@angular/core';
-import { MyService } from '../my.service';
+import { MyService } from '../../services/my.service';
 import { Router } from '@angular/router';
 
 @Component({

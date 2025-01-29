@@ -1,0 +1,21 @@
+.ezt {
+    background-color: #f8f9fa; 
+  }
+  
+  .azt {
+    background-color: #ffffff;
+  }
+
+/* Kép tartalmazó cella */
+table td img {
+    max-width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* SwitchCase div-ek */
+  table td div {
+    font-size: 14px;
+    padding: 5px 0;
+    color: #333;
+  }
