@@ -1,1 +1,25 @@
-<p>users works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Cím</th>
+        </tr>
+    </thead>
+    <ng-container *ngFor="let user of users; index as i">
+        <tr >
+            <td class="underline" (click)="navToUser(user.id)">{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td><button (click)="user.showAddress = !user.showAddress">
+                {{user.showAddress ? "Hide Address" : "Show Address"}}
+            </button></td>
+        </tr>
+        <tr *ngIf="user.showAddress">
+            <td colspan="4">
+                <address [data]="user.address"></address>
+            </td>
+        </tr>
+    </ng-container>
+</table>
