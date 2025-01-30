@@ -104,6 +104,10 @@ export class TablazatComponent implements OnInit{
     this.myService.myFirstGet().subscribe(res=>{
       console.log(res)
       this.users = res;
+    },err=>{
+
+    },()=>{
+      
     });
   }
 

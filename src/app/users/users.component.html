@@ -1,1 +1,27 @@
-<p>users works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Cím</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let user of users">
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td><button (click)="user.showAddress = !user.showAddress">Show Address</button></td>
+            </tr>
+            <tr *ngIf="user.showAddress">
+                <td colspan="4">
+                    <address [data]="user.address"></address>
+
+                </td>
+            </tr>
+        </ng-container>
+        
+    </tbody>
+</table>

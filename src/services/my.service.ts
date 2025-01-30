@@ -25,4 +25,6 @@ export class MyService {
   myFirstGet(){
     return this.http.get<any>("https://jsonplaceholder.typicode.com/users")
   }
+
+  
 }
