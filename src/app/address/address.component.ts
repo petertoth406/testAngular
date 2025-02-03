@@ -10,4 +10,6 @@ import { Address } from '../../models/user';
 })
 export class AddressComponent {
 
+  @Input() 
+  data!: Address;
 }
