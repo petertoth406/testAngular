@@ -1,1 +1,14 @@
-<p>post works!</p>
+<div class="post">
+    <h2>{{postData.title}}</h2>
+    <h4>By: <span class="userName">{{postData.username}}</span></h4>
+    <p>{{postData.body}}</p>
+
+    <button (click)="toggleComments()">
+        {{commentsVisible ? "Kommentek elrejtése" : "Kommentek megjelenítése"}}
+    </button>
+
+    <div *ngIf="commentsVisible">
+        <app-comment *ngFor="let comment of commets" [comment]="comment"></app-comment>
+    </div>
+
+</div>

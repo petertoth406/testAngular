@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { TablazatComponent } from './tablazat/tablazat.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'tablazat', component: TablazatComponent},
   {path: 'users', component: UsersComponent},
   {path: 'user/:id', component: UserComponent},
+  {path: 'posts', component: PostsComponent},
   //{path: '', component: HomeComponent}
   {path: '', redirectTo: '/home', pathMatch: "full"}
 ];
