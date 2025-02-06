@@ -1,0 +1,54 @@
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post h2 {
+    font-size: 20px;
+    color: #007bff;
+  }
+  
+  .post h4 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .post p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .post button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .post button:hover {
+    background-color: #0056b3;
+  }
+  
+  .comments-section {
+    margin-top: 20px;
+  }
+  .post .danger {
+    background-color: red;
+  }
+  .post .danger:hover {
+    background-color: darkred;
+  }
+  .userName:hover{
+    text-decoration: underline;
+    color: #777;
+    cursor: pointer;
+  }

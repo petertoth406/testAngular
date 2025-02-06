@@ -5,6 +5,7 @@ import { ElsoOraComponent } from './elso-ora/elso-ora.component';
 import { LoginComponent } from './login/login.component';
 import { TablazatComponent } from './tablazat/tablazat.component';
 import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: 'tablazat', component: TablazatComponent},
   {path: "users", component: UsersComponent},
+  {path: "posts", component: PostsComponent},
   //{path: "", component: HomeComponent}
   {path: "", redirectTo: "/home", pathMatch: "full"}
 ];

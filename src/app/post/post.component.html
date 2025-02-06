@@ -1,1 +1,12 @@
-<p>post works!</p>
+<div class="post">
+    <h2>{{postData.title}}</h2>
+    <h4>By: {{postData.userName}}</h4>
+    <p>{{postData.body}}</p>
+
+    <button (click)="getComments()">Kommentek megjelenítése</button>
+    <!-- comment -->
+    <div *ngIf="commentsVisible">
+        <comment *ngFor="let comment of comments" [comment]="comment"></comment>
+    </div>
+    
+</div>
