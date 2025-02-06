@@ -26,6 +26,11 @@ export class UsersComponent implements OnInit {
       city: "Budapest",
       zipcode: "1234"
     }, 
+    company: {
+      name: "Deckow-Crist",
+      catchPhrase: "Proactive didactic contingency",
+      bs: "synergize scalable supply-chains"
+    },
     phone: "+36701234567",
     website: "www.asd.com"
   }];

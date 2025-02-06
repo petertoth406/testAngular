@@ -1,1 +1,29 @@
-<p>user works! ID: {{id}}</p>
+<div class="profile-container">
+    <div class="profile-header">
+        <img class="profile-image " src="https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg" alt="profile">
+        <h2>{{user.name}}</h2>
+        <h4>{{user.username}}</h4>
+    </div>
+    <div class="profile-details">
+        <div class="detail-group">
+            <h3>Elérhetőségek</h3>
+            <p><strong>Email: </strong> {{user.email}}</p>
+            <p><strong>Telefon: </strong> {{user.phone}}</p>
+            <p><strong>Weboldal: </strong> {{user.website}}</p>
+        </div>
+        <div class="detail-group">
+            <h3>Cím</h3>
+
+            <p><strong>Város: </strong> {{user.address.city}}</p>
+            <p><strong>Utca: </strong> {{user.address.street}}</p>
+            <p><strong>Házszám: </strong> {{user.address.suite}}</p>
+        </div>
+        <div class="detail-group">
+            <h3>Cég</h3>
+
+            <p><strong>Név: </strong> {{user.company.name}}</p>
+            <p><strong>Szlogen: </strong> {{user.company.catchPhrase}}</p>
+            <p><strong>Tevékenység: </strong> {{user.company.bs}}</p>
+        </div>
+    </div>
+</div>

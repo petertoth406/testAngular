@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../models/post';
 import { PostService } from '../../services/post.service';
 import { Comment } from '../../models/comment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'post',
@@ -19,7 +20,9 @@ export class PostComponent implements OnInit{
 
   commentsVisible: boolean = false;
 
-  constructor(private postService: PostService){
+  constructor(private postService: PostService,
+      private router: Router
+    ){
 
   }
 
@@ -42,5 +45,9 @@ export class PostComponent implements OnInit{
     this.postService.getCommentByPostId(this.postData.id).subscribe(res=>{
       this.commets = res;
     });
+  }
+
+  navToUser(){
+    this.router.navigate([`user/${this.postData.id}`])
   }
 }

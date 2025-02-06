@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostService } from '../../services/post.service';
+import { User } from '../../models/user';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user',
@@ -8,24 +11,27 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
-export class UserComponent {
+export class UserComponent implements OnInit{
 
   id!: string;
+  user!: User;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private postService: PostService,
+    private location: Location,
   ){
     this.id = route.snapshot.paramMap.get("id")!;
   }
 
-  //Házi feladat:
-  /*
-  User serviceben metódust írni 1 db user lekérdezésére:
-  https://jsonplaceholder.typicode.com/users/{id} API-ról
-
-  HTML-en megjeleníteni a user nevét, és email címét
-  
-  */
+  ngOnInit(): void {
+    this.postService.getUserById(this.id).subscribe(res=>{
+      this.user = res;
+    }, err=>{
+      console.error(err);
+      this.location.back();
+    })
+  }
 
 
 }

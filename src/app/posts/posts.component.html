@@ -1,3 +1,20 @@
 <div class="posts">
+    <div class="search-container">
+        <input type="text"
+        placeholder="Keresés felhasználó nevére..."
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+        >
+
+        <ul *ngIf="filteredUsers.length > 0" class="search-results">
+            <li *ngFor="let user of filteredUsers" (click)="selectUser(user)">
+                {{user.name}}
+            </li>
+        </ul>
+    </div>
+
+
+
+
     <post *ngFor="let post of posts" [postData]="post"></post>
 </div>

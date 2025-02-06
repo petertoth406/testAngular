@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { Post } from '../../models/post';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-posts',
@@ -12,6 +13,10 @@ import { Post } from '../../models/post';
 export class PostsComponent implements OnInit {
 
   posts: Post[] = [];
+  users: User[] = [];
+
+  filteredUsers: User[] = [];
+  searchQuery: string = 'Béla';
 
   constructor(private postService: PostService){
 
@@ -26,6 +31,8 @@ export class PostsComponent implements OnInit {
           users=>{
 
             //let numbers = [1, 2, 3];
+            this.users = users;
+            //this.filteredUsers = users;
 
             this.posts = posts.map(post =>{
               const user = users.find(user => user.id == post.userId);
@@ -55,6 +62,29 @@ export class PostsComponent implements OnInit {
     )
   }
 
+  onSearch(){
+    console.log(this.searchQuery)
+    if(this.searchQuery){
+      this.filteredUsers = this.users.filter(user=>{
+        return user.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      })
+    }else{
+      this.filteredUsers = []
+    }
+  }
   
+  selectUser(user: User){
+
+    this.searchQuery = '';
+    this.filteredUsers = [];
+
+    this.postService.getPostsByUserId(user.id).subscribe(res=>{
+      this.posts = res.map(post =>{
+        const user = this.users.find(user => user.id == post.userId);
+        post.username = user?.name ?? "Unknown";
+        return post;
+      });;
+    })
+  }
 
 }

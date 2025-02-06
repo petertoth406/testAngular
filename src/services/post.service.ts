@@ -31,4 +31,8 @@ export class PostService {
     return this.http.get<Comment[]>(`${this.baseUrl}/comments?postId=${postId}`)
   }
 
+  getPostsByUserId(userId: number){
+    return this.http.get<Post[]>(`${this.baseUrl}/posts?userId=${userId}`);
+  }
+
 }
