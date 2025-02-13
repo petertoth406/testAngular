@@ -1,2 +1,28 @@
-<p>products works!mphtemphmpeor</p>
+<p>Táblázat</p>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productService.getProducts()">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.stock}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>Form: Új/Szerkeszt</p>
+
+<button (click)="flag = true">Új</button>
+<button (click)="flag = false">Szerkesztés</button>
+
 <router-outlet></router-outlet>
+

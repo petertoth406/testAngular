@@ -1,1 +1,18 @@
 <p>new-product works!</p>
+<router-outlet></router-outlet>
+
+<form [formGroup]="productForm">
+    <label for="">Id</label>
+    <input formControlName="id">
+
+    <label for="">Név</label>
+    <input formControlName="name">
+
+    <label for="">Ár</label>
+    <input formControlName="price">
+
+    <label for="">Készlet</label>
+    <input formControlName="stock">
+
+    <button (click)="save()">Mentés</button>
+</form>
