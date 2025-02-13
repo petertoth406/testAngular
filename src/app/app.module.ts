@@ -18,6 +18,9 @@ import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { CommentComponent } from './comment/comment.component';
+import { ProductsComponent } from './products/products.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { CommentComponent } from './comment/comment.component';
     UsersComponent,
     PostsComponent,
     PostComponent,
-    CommentComponent
+    CommentComponent,
+    ProductsComponent,
+    UpdateProductComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
