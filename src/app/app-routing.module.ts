@@ -10,26 +10,27 @@ import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { OtherComponent } from './other/other.component';
+import { authGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "elso-ora", component: ElsoOraComponent},
+  {path: "home", component: HomeComponent, canActivate: [authGuard]},
+  {path: "elso-ora", component: ElsoOraComponent, canActivate: [authGuard]},
   {path: "login", component: LoginComponent},
-  {path: 'tablazat', component: TablazatComponent},
-  {path: "users", component: UsersComponent},
-  {path: "posts", component: PostsComponent},
+  {path: 'tablazat', component: TablazatComponent, canActivate: [authGuard]},
+  {path: "users", component: UsersComponent, canActivate: [authGuard]},
+  {path: "posts", component: PostsComponent, canActivate: [authGuard]},
   {
     path: "products", 
-    component: ProductsComponent,
+    component: ProductsComponent, canActivateChild: [authGuard],
     children: [
       {path: "new", component:NewProductComponent, /*children: [
         {path: "asd", component: OtherComponent}
       ]*/},
-      {path: "update", component: UpdateProductComponent}
+      {path: "update", component: UpdateProductComponent }
     ]
   },
   //{path: "", component: HomeComponent}
-  {path: "", redirectTo: "/home", pathMatch: "full"}
+  {path: "", redirectTo: "/login", pathMatch: "full"}
 ];
 
 @NgModule({

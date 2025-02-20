@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyService } from '../../services/my.service';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { MyService } from '../../services/my.service';
 })
 export class NavbarComponent {
   constructor(private router: Router,
-    private myService: MyService) {}
+    private auth: AuthService) {}
 
   navigateTo(route: string) {
     this.router.navigate([route]);
@@ -21,6 +22,6 @@ export class NavbarComponent {
   logout() {
     console.log('Logged out');
     this.navigateTo('login');
-    this.myService.logout();
+    this.auth.logout();
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MyService } from '../services/my.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,11 @@ import { MyService } from '../services/my.service';
 })
 export class AppComponent {
 
-  constructor(private myService: MyService){
+  constructor(private auth: AuthService){
 
   }
 
   isLoggedIn(){
-    return this.myService.isLoggedIn();
+    return this.auth.isLoggedIn();
   }
 }

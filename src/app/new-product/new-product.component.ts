@@ -11,19 +11,19 @@ import { ProductService } from '../../services/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-  productForm!: FormGroup;
+  productForm: FormGroup;
 
   constructor(public fb: FormBuilder, public productService: ProductService){
-
-  }
-
-  ngOnInit(): void {
     this.productForm = this.fb.group({
       id: [null],
       name: ["ougbore"],
       price: [15665],
       stock: [null]
     })
+  }
+
+  ngOnInit(): void {
+    
 
     this.productForm.valueChanges.subscribe(form=>{
       console.log(form);
