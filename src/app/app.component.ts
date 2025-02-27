@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
-import { MyService } from '../services/my.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import { MyService } from '../services/my.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-    constructor(public myService: MyService){}
+    constructor(public auth: AuthService){}
 }

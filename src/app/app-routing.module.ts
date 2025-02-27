@@ -7,17 +7,26 @@ import { TablazatComponent } from './tablazat/tablazat.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { PostsComponent } from './posts/posts.component';
+import { ProductsComponent } from './products/products.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'elso-ora', component: ElsoOraComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'tablazat', component: TablazatComponent},
-  {path: 'users', component: UsersComponent},
-  {path: 'user/:id', component: UserComponent},
-  {path: 'posts', component: PostsComponent},
+  {path: 'elso-ora', component: ElsoOraComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'tablazat', component: TablazatComponent, canActivate: [AuthGuard]},
+  {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
+  {path: 'user/:id', component: UserComponent, canActivate: [AuthGuard]},
+  {path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
+  {path: 'products', component: ProductsComponent, canActivate:[AuthGuard], /*canActivateChild: [AuthGuard],*/ children: [
+    {path: 'new', component: NewProductComponent},
+    {path: 'update', component: UpdateProductComponent}
+  ]},
+
   //{path: '', component: HomeComponent}
-  {path: '', redirectTo: '/home', pathMatch: "full"}
+  {path: '', redirectTo: '/login', pathMatch: "full"}
 ];
 
 @NgModule({

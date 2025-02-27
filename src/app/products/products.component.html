@@ -1,2 +1,23 @@
-<p>products works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productService.getProducts()">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.stock}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="navTo('products/new')">Új</button>
+<button (click)="navTo('products/update')">Szerkeszt</button>
+
 <router-outlet></router-outlet>

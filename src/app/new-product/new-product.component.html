@@ -1,1 +1,24 @@
-<p>new-product works!</p>
+
+<form [formGroup]="form">
+    <div>
+        <label>Id</label>
+        <input formControlName="id">
+    </div>
+    <div>
+        <label>Name</label>
+        <input formControlName="name">
+        <p *ngIf="form.controls['name'].invalid">A név hibás</p>
+    </div>
+    <div>
+        <label>Price</label>
+        <input formControlName="price">
+
+        <p *ngIf="form.controls['price'].invalid">Az ár hibás</p>
+    </div>
+    <div>
+        <label>Stock</label>
+        <input formControlName="stock">
+    </div>
+    <button (click)="ok()">Ok</button>
+</form>
+
