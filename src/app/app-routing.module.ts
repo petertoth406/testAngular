@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { ProductResolver } from '../services/product.resolver';
+import { UserResolver } from '../services/user.resolver';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -18,11 +20,11 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'tablazat', component: TablazatComponent, canActivate: [AuthGuard]},
   {path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
-  {path: 'user/:id', component: UserComponent, canActivate: [AuthGuard]},
+  {path: 'user/:id', component: UserComponent, canActivate: [AuthGuard], resolve: {user: UserResolver}},
   {path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   {path: 'products', component: ProductsComponent, canActivate:[AuthGuard], /*canActivateChild: [AuthGuard],*/ children: [
     {path: 'new', component: NewProductComponent},
-    {path: 'update', component: UpdateProductComponent}
+    {path: 'update/:id', component: UpdateProductComponent, resolve: {asd: ProductResolver}}
   ]},
 
   //{path: '', component: HomeComponent}

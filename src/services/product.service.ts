@@ -21,4 +21,8 @@ export class ProductService {
   addProduct(product: any){
     this.products.push(product)
   }
+
+  getProductById(id: number){
+    return this.products.find(p=>p.id === id);
+  }
 }

@@ -21,16 +21,20 @@ export class UserComponent implements OnInit{
     private postService: PostService,
     private location: Location,
   ){
-    this.id = route.snapshot.paramMap.get("id")!;
+    //this.id = route.snapshot.paramMap.get("id")!;
+    route.data.subscribe(data=>{
+      this.user = data['user'];
+      console.log(this.user);
+    })
   }
 
   ngOnInit(): void {
-    this.postService.getUserById(this.id).subscribe(res=>{
+    /*this.postService.getUserById(this.id).subscribe(res=>{
       this.user = res;
     }, err=>{
       console.error(err);
       this.location.back();
-    })
+    })*/
   }
 
 

@@ -23,4 +23,7 @@ export class ProductsComponent implements OnInit{
     this.productService.getProducts()
   }
 
+  edit(id: number){
+    this.router.navigate(['products/update', id])
+  }
 }
