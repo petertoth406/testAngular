@@ -1,5 +1,11 @@
-import { ResolveFn } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Resolve, ResolveFn, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
 
-export const productResolver: ResolveFn<boolean> = (route, state) => {
-  return true;
-};
+@Injectable({ providedIn: 'root' })
+export class ProductResolver implements Resolve<boolean> {
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return true;
+  }
+}
